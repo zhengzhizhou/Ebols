@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.ProfileFragments.CompanyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relative1">
+
+        <TextView
+            android:id="@+id/CompanyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Name:" />
+
+        <TextView
+            android:id="@+id/companyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/CompanyName"
+            android:text="Findskills Inc" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative1"
+        android:id="@+id/relative2">
+        <TextView
+            android:id="@+id/CompanyEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Email:" />
+        <TextView
+            android:id="@+id/companyEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            android:layout_toRightOf="@+id/CompanyEmail"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative2"
+        android:id="@+id/relative3">
+        <TextView
+            android:id="@+id/CompanyPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Phone:" />
+        <TextView
+            android:id="@+id/companyPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            android:layout_toRightOf="@+id/CompanyPhone"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative3"
+        android:id="@+id/relative4">
+        <TextView
+            android:id="@+id/CompanyFax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Fax:" />
+        <TextView
+            android:id="@+id/companyFax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            android:layout_toRightOf="@+id/CompanyFax"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative4"
+        android:id="@+id/relative5">
+        <TextView
+            android:id="@+id/CompanyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Address:" />
+        <TextView
+            android:id="@+id/companyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            android:layout_toRightOf="@+id/CompanyAddress"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relative5"
+        android:id="@+id/relative6">
+        <TextView
+            android:id="@+id/companyType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company Type:" />
+        <TextView
+            android:id="@+id/CompanyType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            android:layout_toRightOf="@+id/companyType"/>
+    </RelativeLayout>
+</RelativeLayout>

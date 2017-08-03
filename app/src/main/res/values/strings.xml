@@ -1,3 +1,81 @@
 <resources>
     <string name="app_name">Ebols</string>
+    <string name="open">Open</string>
+    <string name="close">close</string>
+
+    <string-array name="nav_item_activity_titles">
+        <item>Home</item>
+        <item>Setting</item>
+        <item>Profile</item>
+        <item>Logout</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner1">Any</string>
+    <string name="spinner2">Date</string>
+    <string name="actions">Actions</string>
+    <string-array name="any">
+        <item>Any</item>
+    </string-array>
+    <string-array name="createDate">
+        <item>any</item>
+        <item>Created Date</item>
+    </string-array>
+    <string-array name="actions">
+        <item>Actions</item>
+        <item>Edit</item>
+        <item>Invoice</item>
+        <item>BOL</item>
+        <item>Assign Driver</item>
+        <item>Marked as Paid</item>
+        <item>Archived</item>
+        <item>Trash</item>
+    </string-array>
+    <string name="pleaseSelectStatus">Status Select</string>
+    <string name="pleaseSelectDriver">Driver Select</string>
+    <string-array name="status_array">
+        <item>Please Select</item>
+        <item>New</item>
+        <item>Pick Up</item>
+        <item>Delievered</item>
+    </string-array>
+    <string-array name="driver_array">
+        <item>Please Select</item>
+    </string-array>
+    <string-array name="paymentTerm">
+        <item>------</item>
+        <item>COD</item>
+        <item>QuickPay</item>
+        <item>Comcheck</item>
+        <item>5 days</item>
+        <item>7 days</item>
+        <item>10 days</item>
+        <item>15 days</item>
+        <item>20 days</item>
+        <item>30 days</item>
+        <item>45 days</item>
+        <item>Other</item>
+        <item>COP</item>
+        <item>CKOD</item>
+        <item>ACH</item>
+    </string-array>
+    <string-array name="select_pick_delievery">
+        <item>PickUp</item>
+        <item>Delievery</item>
+    </string-array>
+    <string-array name="action_chooseDriver">
+        <item>Please choose</item>
+    </string-array>
+    <string-array name="type_vehicle">
+        <item>......</item>
+        <item>Sedan</item>
+        <item>SUV</item>
+        <item>PickUp</item>
+        <item>Van</item>
+        <item>Truck(Daycab)</item>
+        <item>Truck(with sleeper)</item>
+        <item>Motorcycle</item>
+        <item>Car</item>
+        <item>Other</item>
+    </string-array>
 </resources>

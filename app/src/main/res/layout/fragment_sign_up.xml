@@ -1,0 +1,52 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.ebols.Fragment.LoginFragments.SignUpFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please, select your organization type below:"
+            android:id="@+id/sign_up_top"/>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/RGroup"
+            android:orientation="vertical"
+            android:layout_below="@+id/sign_up_top">
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Owner"
+                android:text="Owner-Operator(One truck)"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Fleet"
+                android:layout_below="@+id/Owner"
+                android:text="Fleet(Two+ trucks)"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Custom_solution"
+                android:layout_below="@+id/Fleet"
+                android:text="Custom Solution"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Broker"
+                android:layout_below="@+id/Custom_solution"
+                android:text="Broker/Shipper"/>
+        </RadioGroup>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/signup_frame"
+            android:layout_below="@id/RGroup"></FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

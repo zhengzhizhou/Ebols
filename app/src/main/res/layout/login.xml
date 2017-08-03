@@ -3,47 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
+    <android.support.design.widget.TabLayout
         android:layout_height="wrap_content"
-        android:text="Login" />
-    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username:"/>
+        android:id="@+id/login_signup_tab"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
-    <EditText
-        android:id="@+id/username"
+    </android.support.design.widget.TabLayout>
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password:"/>
+        android:id="@+id/login_signup_frame"
+        android:layout_below="@id/login_signup_tab"></FrameLayout>
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"/>
-
-    <CheckBox
-        android:id="@+id/Remember"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:text="Remember me" />
-
-    <CheckBox
-        android:id="@+id/ShowPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Show the password" />
-
-    <Button
-        android:id="@+id/Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login" />
 </LinearLayout>

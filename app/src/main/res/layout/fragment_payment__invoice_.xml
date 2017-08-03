@@ -1,0 +1,102 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.ebols.Fragment.NewOrderFragments.Payment_Invoice_Fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/paymentInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Information"
+                android:textSize="24sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Term"
+                android:layout_below="@+id/paymentInfo"
+                android:id="@+id/paymentTermTitle"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/paymentTerm"
+                android:entries="@array/paymentTerm"
+                android:layout_below="@+id/paymentTermTitle"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:layout_below="@+id/paymentTerm"
+                android:id="@+id/paymentPriceTitle"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paymentPriceTitle"
+                android:id="@+id/price"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Notes"
+                android:layout_below="@+id/price"
+                android:id="@+id/paymentNotesTitle"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paymentNotesTitle"
+                android:id="@+id/paymentNotes"/>
+
+            <TextView
+                android:id="@+id/invoiceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paymentNotes"
+                android:text="Invoice"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Notes"
+                android:layout_below="@+id/invoiceTitle"
+                android:id="@+id/invoiceIDTitle"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/invoiceIDTitle"
+                android:id="@+id/invoiceID"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Notes"
+                android:layout_below="@+id/invoiceID"
+                android:id="@+id/invoiceNotesTitle"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/invoiceNotesTitle"
+                android:id="@+id/invoiceNotes"/>
+
+            <Button
+                android:id="@+id/Submit_Payment_Invoice_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/invoiceNotes"
+                android:text="Submit" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+</FrameLayout>

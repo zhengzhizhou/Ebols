@@ -1,0 +1,91 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.ebols.Fragment.SignUpFragments.CustomFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/custom_lin"
+                android:orientation="vertical">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="FirstName"
+                    android:id="@+id/custom_firstName"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="LastName"
+                    android:id="@+id/custom_lastName"
+                    android:layout_below="@+id/custom_firstName"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:id="@+id/custom_email"
+                    android:layout_below="@+id/custom_lastName"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:id="@+id/password_custom_signup"
+                    android:layout_below="@+id/custom_email"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Phone number"
+                    android:id="@+id/custom_phone"
+                    android:layout_below="@+id/password_custom_signup"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Company name"
+                    android:id="@+id/custom_companyName"
+                    android:layout_below="@+id/custom_phone"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/custom_companyEmail"
+                    android:hint="Company email"
+                    android:layout_below="@+id/custom_companyName"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/custom_truckSize"
+                    android:hint="Truck size"
+                    android:layout_below="@id/custom_companyEmail"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/custom_desc"
+                    android:hint="Please, describe the unique needs of your organization"
+                    android:layout_below="@+id/custom_truckSize"/>
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/custom_signup"
+                android:layout_below="@+id/custom_lin"
+                android:layout_alignParentRight="true"
+                android:text="SignUp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/custom_close"
+                android:layout_below="@+id/custom_lin"
+                android:layout_toLeftOf="@+id/custom_signup"
+                android:text="Close"/>
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

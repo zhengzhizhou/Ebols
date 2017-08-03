@@ -1,0 +1,33 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ProfileFragments.ProfileFragment_withCompany">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="This is profile company fragment"
+            android:id="@+id/test"/>
+
+        <android.support.design.widget.TabLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/profile_tab"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:layout_below="@+id/test">
+
+        </android.support.design.widget.TabLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profile_frame"
+            android:layout_below="@id/profile_tab"></FrameLayout>
+    </RelativeLayout>
+</FrameLayout>
