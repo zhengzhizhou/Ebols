@@ -11,13 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.administrator.ebols.Login.OauthService;
+import com.example.administrator.ebols.OauthAuthentification.OauthService;
 import com.example.administrator.ebols.OauthAuthentification.Constant;
 import com.example.administrator.ebols.OauthAuthentification.OwnerRegisterRequest;
 import com.example.administrator.ebols.OauthAuthentification.OwnerRegisterResponse;
 import com.example.administrator.ebols.R;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -104,8 +103,6 @@ public class OwnerFragment extends Fragment {
             member.put("password", password.getText().toString());
             company.put("name", companyName.getText().toString());
             company.put("type", "owner");
-            object.put("member", member);
-            object.put("company", company);
 
             Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.url).addConverterFactory(GsonConverterFactory.create()).build();
             oauthService = retrofit.create(OauthService.class);

@@ -1,5 +1,7 @@
 package com.example.administrator.ebols.Activity;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
@@ -9,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -28,16 +29,11 @@ import com.example.administrator.ebols.Fragment.OrderFragments.DeliveredFragment
 import com.example.administrator.ebols.Fragment.OrderFragments.NewOrderFragment;
 import com.example.administrator.ebols.Fragment.OrderFragments.PaidFragment;
 import com.example.administrator.ebols.Fragment.OrderFragments.PickUpFragment;
-import com.example.administrator.ebols.Login.OauthService;
-import com.example.administrator.ebols.OauthAuthentification.Constant;
+import com.example.administrator.ebols.OauthAuthentification.OauthService;
 import com.example.administrator.ebols.OauthAuthentification.OrdersRequest;
-import com.example.administrator.ebols.OauthAuthentification.OrdersResponse;
 import com.example.administrator.ebols.R;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import com.example.administrator.ebols.MyService.TimerService;
+import com.facebook.stetho.Stetho;
 
 public class MainActivity extends AppCompatActivity implements ProfileFragment_withCompany.OnFragmentInteractionListener,
         CompanyFragment.OnFragmentInteractionListener, PersonalFragment.OnFragmentInteractionListener, HistoryFragment.OnFragmentInteractionListener,
@@ -65,17 +61,22 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment_w
         drawerLayout=(DrawerLayout)findViewById(R.id.DrawerLayout);
         handler = new Handler();
 
+        Stetho.newInitializerBuilder(this)
+                .enableDumpapp(
+                        Stetho.defaultDumperPluginsProvider(this))
+                .enableWebKitInspector(
+                        Stetho.defaultInspectorModulesProvider(this))
+                .build();
         navigationView = (NavigationView)findViewById(R.id.navigationMenu);
         activityTitles = getResources().getStringArray(R.array.nav_item_activity_titles);
         dbHandler = new DBHandler(this);
-
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        loadActivity();
         checkForLogin();
+        loadActivity();
     }
 
     private void checkForLogin() {
@@ -84,14 +85,11 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment_w
             startActivity(intent);
             finish();
         }else{
-            companyId = dbHandler.getCompanyId();
-            accessToken = "Bearer "+dbHandler.getAccessToken();
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            startActivity(intent);
-            finish();
+            if(!isServiceRunnning(MainActivity.class)){
+                startService(new Intent(MainActivity.this, TimerService.class));
+            }
         }
     }
-
 
     private void loadActivity() {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -138,38 +136,13 @@ public class MainActivity extends AppCompatActivity implements ProfileFragment_w
         }
         return super.onOptionsItemSelected(item);
     }
-
-    class downloadDatabaseThread extends Thread{
-
-        @Override
-        public void run() {
-
+    public boolean isServiceRunnning(Class<?> serviceClass){
+        ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for(ActivityManager.RunningServiceInfo serviceInfo : activityManager.getRunningServices(Integer.MAX_VALUE)){
+            if(serviceClass.getName().equals(serviceInfo.service.getClassName())){
+                return true;
+            }
         }
-    }
-
-    public class getOrder implements Callback<OrdersResponse> {
-
-        public getOrder(){
-            Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.url).addConverterFactory(GsonConverterFactory.create()).build();
-            oauthService = retrofit.create(OauthService.class);
-            ordersRequest = new OrdersRequest(companyId);
-        }
-        public void run(){
-            Call<OrdersResponse> call = oauthService.getOrder(accessToken, Integer.parseInt(companyId));
-            call.enqueue(this);
-        }
-        @Override
-        public void onResponse(Call<OrdersResponse> call, retrofit2.Response<OrdersResponse> response) {
-            dbHandler.insertData(response.body().getList(), 0);
-            dbHandler.insertData(response.body().getList(), 1);
-            dbHandler.insertData(response.body().getList(), 2);
-            Toast.makeText(getBaseContext(), "done", Toast.LENGTH_LONG).show();
-            Thread.currentThread().interrupt();
-        }
-
-        @Override
-        public void onFailure(Call<OrdersResponse> call, Throwable t) {
-            Log.d("bbbbbb", t.getMessage());
-        }
+        return false;
     }
 }

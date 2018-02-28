@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.ebols.Adapter.HomeListAdapter;
-import com.example.administrator.ebols.Fragment.initialize;
+import com.example.administrator.ebols.Adapter.PickedupListAdapter;
+import com.example.administrator.ebols.Fragment.Initialize;
 import com.example.administrator.ebols.Object.HomeListObject;
+import com.example.administrator.ebols.Object.PickUpListObject;
 import com.example.administrator.ebols.R;
 
 import java.util.ArrayList;
@@ -20,9 +22,9 @@ import java.util.List;
 
 public class PickUpFragment extends Fragment {
 
-    private com.example.administrator.ebols.Fragment.initialize initialize;
-    private List<HomeListObject> homeListObjects;
-    private HomeListAdapter homeListAdapter;
+    private Initialize initialize;
+    private List<PickUpListObject> pickUpListObjects;
+    private PickedupListAdapter pickedupListAdapter;
     private OnFragmentInteractionListener mListener;
 
     @Override
@@ -33,10 +35,12 @@ public class PickUpFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.PickUpList);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(llm);
-        homeListObjects = new ArrayList<>();
-        initialize = new initialize(homeListObjects, getContext());
-        homeListAdapter = new HomeListAdapter(homeListObjects, getContext());
-        recyclerView.setAdapter(homeListAdapter);
+        pickUpListObjects = new ArrayList<>();
+        initialize = new Initialize(getContext(), "pickedUp");
+        initialize.setPickUpListObjects(pickUpListObjects);
+        pickUpListObjects = initialize.inializePickedUp();
+        pickedupListAdapter = new PickedupListAdapter(pickUpListObjects, getContext(), "pickedUp");
+        recyclerView.setAdapter(pickedupListAdapter);
         return view;
     }
 

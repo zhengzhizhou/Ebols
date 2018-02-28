@@ -25,11 +25,9 @@
         <item>Actions</item>
         <item>Edit</item>
         <item>Invoice</item>
-        <item>BOL</item>
         <item>Assign Driver</item>
         <item>Marked as Paid</item>
         <item>Archived</item>
-        <item>Trash</item>
     </string-array>
     <string name="pleaseSelectStatus">Status Select</string>
     <string name="pleaseSelectDriver">Driver Select</string>

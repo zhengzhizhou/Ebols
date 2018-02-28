@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.administrator.ebols.DB.DBHandler;
-import com.example.administrator.ebols.Login.OauthService;
+import com.example.administrator.ebols.OauthAuthentification.OauthService;
 import com.example.administrator.ebols.OauthAuthentification.AccessResponse;
 import com.example.administrator.ebols.OauthAuthentification.Constant;
 import com.example.administrator.ebols.OauthAuthentification.RefreshRequest;
@@ -98,7 +98,8 @@ public class PersonalFragment extends Fragment {
         public getNewRefreshToken(){
             Retrofit retrofit = new Retrofit.Builder().baseUrl(Constant.url).addConverterFactory(GsonConverterFactory.create()).build();
             oauthService=retrofit.create(OauthService.class);
-            refreshRequest = new RefreshRequest(refresh_token);
+            refreshRequest = new RefreshRequest();
+            refreshRequest.setRefresh_token(refresh_token);
         }
         public void run(){
             Call<AccessResponse> call = oauthService.refreshToken(refreshRequest);

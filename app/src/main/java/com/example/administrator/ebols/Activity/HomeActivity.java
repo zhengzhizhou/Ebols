@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.administrator.ebols.DB.DBHandler;
 import com.example.administrator.ebols.Fragment.OrderFragments.ArchivedFragment;
 import com.example.administrator.ebols.Fragment.OrderFragments.AssignedFragment;
 import com.example.administrator.ebols.Fragment.OrderFragments.BilledFragment;
@@ -17,6 +18,9 @@ import com.example.administrator.ebols.Fragment.OrderFragments.NewOrderFragment;
 import com.example.administrator.ebols.Fragment.OrderFragments.PaidFragment;
 import com.example.administrator.ebols.Fragment.OrderFragments.PickUpFragment;
 import com.example.administrator.ebols.R;
+import com.example.administrator.ebols.RetrofitClass.GetOrder;
+
+import java.io.UnsupportedEncodingException;
 
 public class HomeActivity extends MainActivity {
 
@@ -27,6 +31,7 @@ public class HomeActivity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = getLayoutInflater().inflate(R.layout.activity_home, frameLayout);
+
         btn = (Button)view.findViewById(R.id.newOrder);
         tabLayout= (TabLayout) view.findViewById(R.id.Home_Tabs);
         if(index == 0){
@@ -70,6 +75,7 @@ public class HomeActivity extends MainActivity {
         });
     }
 
+
     private void changeFragment(int index) {
         Fragment fragment;
         switch (index){
@@ -102,5 +108,6 @@ public class HomeActivity extends MainActivity {
         fragmentTrasaction.replace(R.id.frame_home, fragment);
         fragmentTrasaction.commit();
     }
+
 
 }

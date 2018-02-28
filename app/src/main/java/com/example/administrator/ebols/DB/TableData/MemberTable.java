@@ -43,7 +43,16 @@ public class MemberTable {
     public String getMemberData(String data, SQLiteDatabase sqLiteDatabase){
         SELECT_MEMBER_TABLE="SELECT "+data+" FROM MEMBER";
         Cursor cursor = sqLiteDatabase.rawQuery(SELECT_MEMBER_TABLE, null);
+        cursor.moveToFirst();
         String result = cursor.getString(1);
+        cursor.close();
+        return result;
+    }
+    public int getMemberID(SQLiteDatabase sqLiteDatabase){
+        SELECT_MEMBER_TABLE="SELECT id FROM MEMBER";
+        Cursor cursor = sqLiteDatabase.rawQuery(SELECT_MEMBER_TABLE, null);
+        cursor.moveToFirst();
+        int result = cursor.getInt(0);
         cursor.close();
         return result;
     }

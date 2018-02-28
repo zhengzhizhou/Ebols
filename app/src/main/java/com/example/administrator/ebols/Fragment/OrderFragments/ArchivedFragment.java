@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.ebols.Adapter.ArchivedListAdapter;
 import com.example.administrator.ebols.Adapter.HomeListAdapter;
-import com.example.administrator.ebols.Fragment.initialize;
+import com.example.administrator.ebols.Fragment.Initialize;
+import com.example.administrator.ebols.Object.ArchiveListObject;
 import com.example.administrator.ebols.Object.HomeListObject;
 import com.example.administrator.ebols.R;
 
@@ -20,9 +22,9 @@ import java.util.List;
 
 public class ArchivedFragment extends Fragment {
 
-    private com.example.administrator.ebols.Fragment.initialize initialize;
-    private List<HomeListObject> homeListObjects;
-    private HomeListAdapter homeListAdapter;
+    private Initialize initialize;
+    private List<ArchiveListObject> archiveListObjects;
+    private ArchivedListAdapter archivedListAdapter;
     private OnFragmentInteractionListener mListener;
 
     @Override
@@ -33,10 +35,12 @@ public class ArchivedFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.ArchivedList);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(llm);
-        homeListObjects = new ArrayList<>();
-        initialize = new initialize(homeListObjects, getContext());
-        homeListAdapter = new HomeListAdapter(homeListObjects, getContext());
-        recyclerView.setAdapter(homeListAdapter);
+        archiveListObjects = new ArrayList<>();
+        initialize = new Initialize(getContext(), "archived");
+        initialize.setArchiveListObjects(archiveListObjects);
+        archiveListObjects = initialize.inializeArchieved();
+        archivedListAdapter = new ArchivedListAdapter(archiveListObjects, getContext(), "archived");
+        recyclerView.setAdapter(archivedListAdapter);
         return view;
     }
 

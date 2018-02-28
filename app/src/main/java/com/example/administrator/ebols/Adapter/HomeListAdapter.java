@@ -3,17 +3,15 @@ package com.example.administrator.ebols.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.administrator.ebols.Activity.LoadInfoActivity;
 import com.example.administrator.ebols.Object.HomeListObject;
 import com.example.administrator.ebols.R;
+import com.squareup.otto.Bus;
 
 import java.util.List;
 
@@ -25,6 +23,8 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHo
 
     private int selectedPos = 0;
     private Context context;
+    Bus bus;
+    private String tab;
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView LoadId_textview;
         TextView IdLoaded_textview;
@@ -43,33 +43,36 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHo
             to_textview = (TextView)itemView.findViewById(R.id.to);
             startPoint_textview = (TextView)itemView.findViewById(R.id.startPoint);
             destination_textview = (TextView)itemView.findViewById(R.id.destination);
-
         }
     }
     public List<HomeListObject> homeListObject;
-    public HomeListAdapter(List<HomeListObject> homeListObject, Context context){
+    public HomeListAdapter(List<HomeListObject> homeListObject, Context context, String tab){
         this.homeListObject = homeListObject;
         this.context = context;
+        this.tab = tab;
     }
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_listitem, parent, false);
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
+        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listitem_home, parent, false);
+
+        final ViewHolder viewHolder = new ViewHolder(view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notifyItemChanged(selectedPos);
+                selectedPos =viewHolder.getAdapterPosition();
                 Intent intent = new Intent(view.getContext(), LoadInfoActivity.class);
+                intent.putExtra("id", homeListObject.get(selectedPos).list_id);
+                intent.putExtra("tab", tab);
                 context.startActivity(intent);
             }
         });
-        ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemAmount_textview.setText(homeListObject.get(position).itemAmount);
-        holder.IdLoaded_textview.setText(homeListObject.get(position).Id);
+        holder.IdLoaded_textview.setText(homeListObject.get(position).list_id);
         holder.startPoint_textview.setText(homeListObject.get(position).startPoint);
         holder.destination_textview.setText(homeListObject.get(position).destination);
         holder.itemView.setSelected(selectedPos == position);

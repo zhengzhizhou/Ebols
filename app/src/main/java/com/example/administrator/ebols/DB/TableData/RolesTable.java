@@ -24,7 +24,7 @@ public class RolesTable {
         sqLiteDatabase.execSQL(CREATE_COMPANY_ROLES_TABLE);
     }
     public void DropRolesTable(SQLiteDatabase sqLiteDatabase){
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+CREATE_COMPANY_ROLES_TABLE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+Roles_Company_Table_Name);
     }
 
     public void insertRolesTable(String user_ID, List<String> company_Roles, SQLiteDatabase sqLiteDatabase){

@@ -1,0 +1,91 @@
+package com.example.administrator.ebols.DB.TableData;
+
+/**
+ * Created by Administrator on 2017/8/11.
+ */
+
+public class OrderConstant {
+    public static final String Key_ID = "ID";
+    public static final String Key_Order_ID = "OrderId";
+    public static final String Key_Order_CompanyId = "companyId";
+    public static final String Key_Order_number = "number";
+    public static final String Key_Order_status ="status";
+    public static final String Key_Order_billClient="billClient";
+    public static final String Key_Order_instruction="instruction";
+    public static final String Key_Order_totalPrice = "totalPrice";
+    public static final String Key_Order_modifiedDate = "modifiedDate";
+    public static final String Key_Order_ArchivedDate = "archivedDate";
+    public static final String Key_Order_BilledDate = "billedDate";
+    public static final String Key_Order_PaidDate = "paidDate";
+    public static final String Key_Order_Driver_id = "Driver_id";
+    public static final String Key_Order_Driver_name = "Driver_name";
+    public static final String Key_Order_Driver_Prefix = "Driver_prefix";
+    public static final String Key_Order_Driver_FirstName = "Driver_firstName";
+    public static final String Key_Order_Driver_LastName = "Driver_lastName";
+    public static final String Key_Order_Original_Date = "Original_date";
+    public static final String Key_Order_Original_Customer_Name = "Original_Customer_name";
+    public static final String Key_Order_Original_Customer_AddressLines = "Original_Customer_addressLines";
+    public static final String Key_Order_Original_Customer_AddressCity = "Original_Customer_addressCity";
+    public static final String Key_Order_Original_Customer_AddressState = "Original_Customer_addressState";
+    public static final String Key_Order_Original_Customer_AddressZipCode = "Original_Customer_addressZipcode";
+    public static final String Key_Order_Original_Customer_Contact="Original_Customer_contact";
+    public static final String Key_Order_Original_Customer_Phone = "Original_Customer_phone";
+    public static final String Key_Order_Original_Customer_fax = "Original_Customer_fax";
+    public static final String Key_Order_Original_Customer_Email = "Original_Customer_email";
+    public static final String Key_Order_Original_note = "Original_note";
+    public static final String Key_Order_Original_CustomerSignature_Id = "Original_CustomerSignature_id";
+    public static final String Key_Order_Original_CustomerSignature_url = "Original_CustomerSignature_url";
+    public static final String Key_Order_Original_CustomerSignature_Name = "Original_CustomerSignature_name";
+    public static final String Key_Order_Original_CustomerSignature_Key = "Original_CustomerSignature_key";
+    public static final String Key_Order_Original_CustomerSignature_Size = "Original_CustomerSignature_size";
+    public static final String Key_Order_Original_CustomerSignature_MimeType = "Original_CustomerSignature_mimeType";
+    public static final String Key_Order_Original_DriverSignature_Id = "Original_DriverSignature_id";
+    public static final String Key_Order_Original_DriverSignature_Url = "Original_DriverSignature_url";
+    public static final String Key_Order_Original_DriverSignature_Name = "Original_DriverSignature_name";
+    public static final String Key_Order_Original_DriverSignature_Key = "Original_DriverSignature_key";
+    public static final String Key_Order_Original_DriverSignature_Size = "Original_DriverSignature_size";
+    public static final String Key_Order_Original_DriverSignature_MimeType = "Original_DriverSignature_mimeType";
+    public static final String Key_Order_Destination_Date = "Destination_Datedate";
+    public static final String Key_Order_Destination_Customer_Name = "Destination_Customer_name";
+    public static final String Key_Order_Destination_Customer_AddressLines = "Destination_Customer_addressLines";
+    public static final String Key_Order_Destination_Customer_AddressCity = "Destination_Customer_addressCity";
+    public static final String Key_Order_Destination_Customer_AddressState = "Destination_Customer_addressState";
+    public static final String Key_Order_Destination_Customer_AddressZipCode = "Destination_Customer_addressZipcode";
+    public static final String Key_Order_Destination_Customer_Contact="Destination_Customer_contact";
+    public static final String Key_Order_Destination_Customer_Phone = "Destination_Customer_phone";
+    public static final String Key_Order_Destination_Customer_fax = "Destination_Customer_fax";
+    public static final String Key_Order_Destination_Customer_Email = "Destination_Customer_email";
+    public static final String Key_Order_Destination_note = "Destination_Customer_note";
+    public static final String Key_Order_Destination_CustomerSignature_Id = "Destination_CustomerSignature_id";
+    public static final String Key_Order_Destination_CustomerSignature_url = "Destination_CustomerSignature_url";
+    public static final String Key_Order_Destination_CustomerSignature_Name = "Destination_CustomerSignature_name";
+    public static final String Key_Order_Destination_CustomerSignature_Key = "Destination_CustomerSignature_key";
+    public static final String Key_Order_Destination_CustomerSignature_Size = "Destination_CustomerSignature_size";
+    public static final String Key_Order_Destination_CustomerSignature_MimeType = "Destination_CustomerSignature_mimeType";
+    public static final String Key_Order_Destination_DriverSignature_Id = "Destination_DriverSignature_id";
+    public static final String Key_Order_Destination_DriverSignature_Url = "Destination_DriverSignature_url";
+    public static final String Key_Order_Destination_DriverSignature_Name = "Destination_DriverSignature_name";
+    public static final String Key_Order_Destination_DriverSignature_Key = "Destination_DriverSignature_key";
+    public static final String Key_Order_Destination_DriverSignature_Size = "Destination_DriverSignature_size";
+    public static final String Key_Order_Destination_DriverSignature_MimeType = "Destination_DriverSignature_mimeType";
+    public static final String Key_Order_printCopy_Id = "printCopy_id";
+    public static final String Key_Order_printCopy_Url = "printCopy_url";
+    public static final String Key_Order_Invoice_Id = "Invoice_id";
+    public static final String Key_Order_Invoice_Url = "Invoice_url";
+    public static final String Key_Order_Customer_Name = "Customer_name";
+    public static final String Key_Order_Customer_AddressLines = "Customer_addressLines";
+    public static final String Key_Order_Customer_AddressCity = "Customer_addressCity";
+    public static final String Key_Order_Customer_AddressState = "Customer_addressState";
+    public static final String Key_Order_Customer_AddressZipCode = "Customer_addressZipcode";
+    public static final String Key_Order_Customer_Contact="Customer_contact";
+    public static final String Key_Order_Customer_Phone = "Customer_phone";
+    public static final String Key_Order_Customer_fax = "Customer_fax";
+    public static final String Key_Order_Customer_Email = "Customer_email";
+    public static final String Key_Order_Payment_Amount="Payment_amount";
+    public static final String Key_Order_Payment_PaymentMethod="Payment_paymentMethod";
+    public static final String Key_Order_Payment_PaymentNote="Payment_paymentNote";
+    public static final String Key_Order_Payment_PaymentDate="Payment_paymentDate";
+    public static final String Key_Order_Payment_InvoiceNumber="Payment_invoiceNumber";
+    public static final String Key_Order_Payment_InvoiceNote="Payment_invoiceNote";
+
+}

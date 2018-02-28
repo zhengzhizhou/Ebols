@@ -11,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.administrator.ebols.Adapter.HomeListAdapter;
-import com.example.administrator.ebols.Fragment.initialize;
+import com.example.administrator.ebols.Adapter.PaidListAdapter;
+import com.example.administrator.ebols.Fragment.Initialize;
 import com.example.administrator.ebols.Object.HomeListObject;
+import com.example.administrator.ebols.Object.PaidListObject;
 import com.example.administrator.ebols.R;
 
 import java.util.ArrayList;
@@ -20,9 +22,9 @@ import java.util.List;
 
 public class PaidFragment extends Fragment {
 
-    private com.example.administrator.ebols.Fragment.initialize initialize;
-    private List<HomeListObject> homeListObjects;
-    private HomeListAdapter homeListAdapter;
+    private Initialize initialize;
+    private List<PaidListObject> paidListObjects;
+    private PaidListAdapter paidListAdapter;
     private OnFragmentInteractionListener mListener;
 
     @Override
@@ -33,10 +35,12 @@ public class PaidFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.PaidList);
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(llm);
-        homeListObjects = new ArrayList<>();
-        initialize = new initialize(homeListObjects, getContext());
-        homeListAdapter = new HomeListAdapter(homeListObjects, getContext());
-        recyclerView.setAdapter(homeListAdapter);
+        paidListObjects = new ArrayList<>();
+        initialize = new Initialize(getContext(), "paid");
+        initialize.setPaidListObjects(paidListObjects);
+        paidListObjects = initialize.inializePaid();
+        paidListAdapter = new PaidListAdapter(paidListObjects, getContext(), "paid");
+        recyclerView.setAdapter(paidListAdapter);
         return view;
     }
 
